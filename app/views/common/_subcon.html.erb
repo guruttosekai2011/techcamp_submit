@@ -1,0 +1,23 @@
+<div class='subcon'>
+  <div class='subbar'>
+    <h2>メモ帳</h2>
+
+    <%= form_for(@memo) do |f| %>
+      <div class='memo-form'>
+        <%= f.text_field :title, placeholder: "タイトル", autocomplete: 'off', class: "form-control memo-title", :style => "text-align: center" %>
+        <%= f.text_area :memo, placeholder: "メモ", class: "form-control memo-contents" %>
+
+          <div class='check'>
+            <%= check_box( 'memo', 'public_open') %>
+            <%= f.label :全体に公開する, class: 'checkbox' %>
+          </div>
+      
+
+        <div class="form-group">
+          <%= f.submit "メモを保存", class: "btn btn-primary withripple" %>
+        </div>
+      </div>
+
+    <% end %> 
+  </div>
+</div>

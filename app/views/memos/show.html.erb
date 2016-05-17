@@ -1,0 +1,42 @@
+<script src="/assets/show_memo.js"></script>
+
+<div class="memo-share">
+  
+  <div class="show-memo">
+
+    <div class="col-lg-7">
+    <h2>
+      <%= @memo.title %> 
+    </h2>
+    </div>
+
+    <div class="col-lg-5">
+    <h2>
+      作成者：  
+      <a href="/users/<%= @memo.user.id %>">
+      <%= @memo.user.nickname %> 
+      </a>
+    </h2>
+    </div>
+    
+    <div class="col-lg-12">
+    <div class="col-lg-2"></div>
+    
+    <div class="col-lg-8">
+
+    <div class="memo-memo">
+      <h3>
+      <%= simple_format(@memo.memo) %> 
+      </h3>
+    </div>
+    </div>
+    
+    <div class="col-lg-2"></div>
+    </div>
+
+
+  </div>
+
+</div>
+
+

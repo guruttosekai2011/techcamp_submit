@@ -1,0 +1,52 @@
+<script src="/assets/dropify.js"></script>
+<script src="/assets/dropify_event.js"></script>
+
+<div class="row form">
+  <div class="col-lg-12">
+    <%= form_for current_user do |f| %>
+     
+      <h2>プロフィール画像</h2>
+      <div class="form-group">
+        <%= f.file_field :avatar, :class => "dropify" %>
+      </div>
+      
+      <div class='insert-pad-50'></div>
+      <div class='insert-pad-50'></div>
+
+      <h2>登録情報</h2>
+      <div class="form-group">
+        <h4>表示名（必須）</h4>
+        <div class="col-lg-12">
+          <%= f.text_field :nickname, placeholder: "ニックネーム", class: "form-control", :style => "text-align: center" %>
+        </div>
+        <h4>誕生日（必須）</h4>
+        <div class="col-lg-6">
+          <%= f.text_field :birth_year, placeholder: "year", class: "form-control", :style => "text-align: center" %>
+        </div>
+        <div class="col-lg-3">
+          <%= f.text_field :birth_month, placeholder: "month", class: "form-control", :style => "text-align: center" %>
+        </div>
+        <div class="col-lg-3">
+          <%= f.text_field :birth_day, placeholder: "day", class: "form-control", :style => "text-align: center" %>
+        </div>
+        <h4>所属（必須）</h4>
+        <div class="col-lg-12">
+          <%= f.text_field :belonging, placeholder: "大学・会社", class: "form-control", :style => "text-align: center" %>
+        </div>
+        <h4>Facebookアカウト</h4>
+        <div class="col-lg-12">
+          <%= f.text_field :facebookid, placeholder: "Facebook ID", class: "form-control", :style => "text-align: center" %>
+        </div>
+        <h4>Twitterアカウト</h4>
+        <div class="col-lg-12">
+          <%= f.text_field :twitterid, placeholder: "Twitter ID", class: "form-control", :style => "text-align: center" %>
+        </div>
+        <h4>自己紹介文（必須）</h4>
+        <%= f.text_area :introduction, placeholder: "自己紹介文を入力", size: "30x10", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "更新", class: "btn btn-primary withripple" %>
+      </div>
+    <% end %>
+  </div>
+</div>

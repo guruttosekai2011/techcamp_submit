@@ -1,0 +1,57 @@
+<div class='login_back'>
+  <div class='log-in'>
+    <%= render partial: 'common/login_logo' %>
+   
+    <div class="col-lg-8">
+      <div class="announce">
+        <h2>PStudyはデータ解析を中心としたPython学習サイトです</h2>
+        <h3>本サイトはβ版であるため、完全招待制です。<br>利用には招待コードが必要です</h3>
+        <img src="/assets/login_image.jpg">
+      
+      </div>
+    
+    
+    </div>
+
+    <div class="col-lg-4">
+
+    <div class='log-in-inner'>
+      <h2>ログイン</h2>
+
+      <div class='insert-pad-20'></div>
+      
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <% if alert %>
+          <p class='alert alert-danger'><%= alert %></p>
+        <% end %>
+
+        <div>
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email, autofocus: true, class: 'input form-control' %>
+        </div>
+
+        <div class='insert-pad-25'></div>
+        
+        <div>
+          <%= f.label :パスワード %>
+          <%= f.password_field :password, autocomplete: 'off', class: 'input form-control' %>
+        </div><br />
+        
+        <div class='insert-pad-40'></div>
+        
+        <div>
+          <%= f.submit class: 'btn btn-primary withripple', value: 'ログイン' %>
+        </div>
+      <% end %>
+
+      <div class='insert-pad-10'></div>
+      
+      <div class='login_link'>
+        <%= render 'devise/shared/links' %>
+      </div>
+    </div>
+
+    </div>
+
+  </div>
+</div>

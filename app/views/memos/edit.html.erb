@@ -1,0 +1,40 @@
+<div>
+  <%= form_tag("/memos/#{@memo.id}", method: :patch ) do %>
+  
+  <div class="col-lg-3">
+  <div class="memo-sub">
+    <h2>メモ一覧</h2>
+
+    <% @user_memos.each do |memo| %>
+      <div class="sub-memo-box">
+      <a href="/memos/<%= memo.id %>/edit">
+      <div class="sub-memo-title">
+        <%= memo.title %>
+      </div>
+      <div class="sub-memo-memo">
+        <p>
+        <%= memo.memo %>
+        </p>
+      </div>
+      </a>
+      </div>
+    <% end %>
+
+  </div>
+  </div>
+
+  <div class="col-lg-9">
+  <div class="memo-main">
+    <input type="text" name="title" placeholder="タイトル" value="<%= @memo.title %>" autocomplete="off" class="memo-title-edit">
+    <textarea name="memo" placeholder="メモ" class="memo-memo-edit"><%= @memo.memo %></textarea> 
+
+    <div class="form-group">
+      <input type="submit" value="メモを更新" class="memo-update-btn">
+      <%= link_to '削除', "/memos/#{@memo.id}", method: :delete , class: "memo-destroy-btn" %>
+    </div>
+
+  <% end %>
+  </div>
+  </div>
+
+</div>

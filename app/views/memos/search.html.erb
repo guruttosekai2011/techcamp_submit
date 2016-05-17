@@ -1,0 +1,45 @@
+<div class="memo-park">
+
+  <div class="col-lg-12">
+  
+  <div class="search-board">
+    <h2>検索</h2>
+    <%= form_tag('/memos/search', method: :get) do %>
+      <input class="search__query" name="keyword" placeholder="キーワード検索" type="text" value="">
+      <button class="btn-search" title="検索" type="submit"><i>検索</i></button>
+      </input>
+    <% end %>  
+
+
+  </div>
+  
+  <div class="memo-board">
+
+    <h2>メモ一覧</h2>
+
+    <% @memos.each do |memo| %>
+    <div class="col-lg-3 memo-frame">
+     
+      <a href="/memos/<%= memo.id %>">
+      <div class="memo">
+
+      <div class="park-memo-title">
+        <%= memo.title %>
+      </div>
+      <div class="park-memo-memo">
+        <%= simple_format(memo.memo) %>
+      </div>
+      
+      </div>
+      </a>
+
+    </div>
+    <% end %>
+
+    </div>
+
+  </div>
+
+  </div>
+
+</div>

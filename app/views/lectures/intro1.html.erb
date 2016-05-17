@@ -1,0 +1,106 @@
+<script src="/assets/lectures.js"></script>
+
+<div class='container'>
+
+  <div class='col-lg-12'>
+    <div class="topbg">
+      <img src="/assets/topbg.jpg" width="100%" height="80%">
+    </div>
+  </div>
+
+  <div class='col-lg-9'>
+    <div class='maincon'>
+      
+      <h2>Pythonの確認</h2>
+      
+      <div class='description'>
+        プログラミングの定番である"Hello World"の表示からPython学習を始めます。<br/>
+        Pythonを用いたプログラミングでは作成したプログラムを作るために vim・emacs・Sublime Text などのテキストエディタを使用します。<br/>
+        本講義では各テキストエディタの説明は行いません。好みのエディタを使用してください。<br/><br/>
+        また、ターミナル上での作業とエディタでの作業を区別するために本講義では
+        <ul class='caution'>
+          <li> "$" からスタート ： ターミナルでの作業</li>
+          <li> "$" なしスタート ： エディタでの作業</li>
+        </ul>
+        とします。<br/><br/>
+        
+        ターミナルを開き、pythonを立ち上げましょう<br/><br/>
+        
+        <div class='code'>
+          <pre>$ python</pre>
+        </div><br/>
+        
+        設定やバージョンによって詳細は異なりますが、以下のような表示がされれば成功です。<br/><br/> 
+        
+        <div class='code'>
+          <pre>
+          Python 2.7.10 (default, Jul 14 2015, 19:46:27)
+          [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+          Type "help", "copyright", "credits" or "license" for more information.
+          >>></pre>
+        </div><br/>
+
+        このパソコンでは "Python 2.7.10" がデフォルトで設定されています。<br/>
+        詳細な説明はここではしませんが、<br/>
+        Pythonには 2.xx.xx のPython2系統と 3.xx.xx のPython3系統があります。<br/>
+        今後3系統にシフトしていく見方もありますが、本講義では2系統を用います。<br/><br/>
+
+        2系統と3系統の違いが気になる方は<br/>
+        <a href="#">Python 2.7.x と 3.x の決定的な違いを例とともに</a><br/>
+        などを参考に学習してください。<br/><br/>
+
+      </div>
+    
+
+      <h2>Hello World</h2>
+      
+      <div class='description'>
+      
+        多くのプログラミング学習は "Hello World" の表示でスタートします。<br/>
+        本講義でも "Hello World" からプログラミングの世界に入りましょう！<br/><br/>
+
+        Pythonのためのファイルを作成します。<br/>
+        例はvimエディタを用いますが、好みのエディタを使用してください。<br/><br/>
+
+        <div class='code'>
+          <pre>$ vim hello.py</pre>
+        </div><br/>
+
+        先頭の "vim" は「vimエディタを使いますよというコマンドで、<br/>
+        続く "hello.py" がファイルの名前になります。<br/>
+        Pythonのファイルは語尾に ".py" がつくことを覚えておきましょう。<br/>
+        ※ 語尾の .py のようなものを拡張子といいます<br/>
+
+        以下のように hello.py の中身を記述し、保存しましょう<br/><br/>
+
+        <div class='code'>
+          <pre>
+          # -*- coding: utf-8 -*-
+
+          print "Hello World!"
+          </pre>
+        </div><br/>
+
+        保存してターミナルに戻ったらさっそく実行してみましょう<br/><br/>
+
+        <div class='code'>
+          <pre>$ python hello.py</pre>
+        </div><br/>
+
+        ちゃんと "Hello World!" と表示されていれば成功です。<br/>
+        "# -*- coding: utf-8 -*-"<br/>
+        の部分が気になるかもしれませんが、文字コードの理解が必要なので今回は説明を省きます。<br/>
+        現時点ではPythonのプログラムでは1行目に書かなければならない魔法の言葉だと覚えてください。<br/><br/>
+      
+      </div>
+        
+    </div>
+  </div>
+
+  <div class='col-lg-3'>
+    <%= render partial: 'common/subcon' %>
+  </div>
+
+</div>
+
+
